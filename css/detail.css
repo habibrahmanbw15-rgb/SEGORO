@@ -1,0 +1,622 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    background: #000810;
+
+    color: white;
+}
+
+button,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ========================================
+   PAGE
+======================================== */
+
+.detail-page {
+    width: 100%;
+    max-width: 480px;
+
+    min-height: 100vh;
+
+    margin: auto;
+
+    padding-bottom: 105px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #092031,
+            #03111c 45%,
+            #020b13
+        );
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.detail-header {
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 18px;
+}
+
+.back-button,
+.share-button {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #071923;
+
+    border: 1px solid #304653;
+
+    color: white;
+
+    font-size: 20px;
+}
+
+.header-title {
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* ========================================
+   PRODUCT IMAGE
+======================================== */
+
+.product-image {
+    position: relative;
+
+    width: 100%;
+
+    height: 300px;
+
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.product-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 60%,
+            rgba(2, 11, 19, 0.8)
+        );
+}
+
+
+/* ========================================
+   FAVORITE
+======================================== */
+
+.favorite-button {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    z-index: 3;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    border-radius: 50%;
+
+    background: rgba(0,0,0,0.45);
+
+    color: white;
+
+    font-size: 24px;
+
+    backdrop-filter: blur(8px);
+}
+
+.image-counter {
+    position: absolute;
+
+    right: 18px;
+    bottom: 15px;
+
+    z-index: 3;
+
+    padding: 5px 9px;
+
+    border-radius: 8px;
+
+    background: rgba(0,0,0,0.55);
+
+    font-size: 9px;
+}
+
+
+/* ========================================
+   PRODUCT INFORMATION
+======================================== */
+
+.product-info {
+    padding: 18px;
+}
+
+.product-heading {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.product-heading h1 {
+    font-size: 25px;
+
+    margin-bottom: 3px;
+}
+
+.price {
+    color: #ffd900;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+.favorite-label {
+    padding: 6px 9px;
+
+    border-radius: 7px;
+
+    background: #ffd900;
+
+    color: #071018;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+.description {
+    margin-top: 14px;
+
+    color: #9aa9b1;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   OPTION SECTION
+======================================== */
+
+.option-section {
+    margin: 0 18px 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #263c49;
+}
+
+.option-heading {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+}
+
+.option-heading h2 {
+    font-size: 14px;
+}
+
+.option-heading span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #7f909a;
+
+    font-size: 9px;
+}
+
+.option-heading small {
+    padding: 4px 7px;
+
+    border-radius: 5px;
+
+    background: #162b38;
+
+    color: #8497a1;
+
+    font-size: 8px;
+}
+
+
+/* ========================================
+   SELECT
+======================================== */
+
+.select-box {
+    position: relative;
+}
+
+.select-box select {
+    width: 100%;
+
+    appearance: none;
+
+    padding: 13px 40px 13px 13px;
+
+    border: 1px solid #304754;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #071923;
+
+    color: white;
+
+    font-size: 10px;
+}
+
+.select-box span {
+    position: absolute;
+
+    top: 50%;
+    right: 14px;
+
+    transform: translateY(-50%);
+
+    color: #ffd900;
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   RADIO
+======================================== */
+
+.radio-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.radio-option {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    border: 1px solid #29404e;
+
+    border-radius: 10px;
+
+    background: #071923;
+
+    color: #d4dce0;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+.radio-option input {
+    display: none;
+}
+
+.custom-radio {
+    width: 17px;
+    height: 17px;
+
+    border: 1px solid #667780;
+
+    border-radius: 50%;
+
+    position: relative;
+}
+
+.radio-option input:checked + .custom-radio {
+    border-color: #ffd900;
+}
+
+.radio-option input:checked + .custom-radio::after {
+    content: "";
+
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    top: 3px;
+    left: 3px;
+
+    border-radius: 50%;
+
+    background: #ffd900;
+}
+
+
+/* ========================================
+   ADDITIONAL
+======================================== */
+
+.additional-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.additional-option {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 13px;
+
+    border: 1px solid #29404e;
+
+    border-radius: 10px;
+
+    background: #071923;
+
+    font-size: 10px;
+}
+
+.option-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.additional-option input {
+    appearance: none;
+
+    width: 17px;
+    height: 17px;
+
+    border: 1px solid #62747d;
+
+    border-radius: 4px;
+}
+
+.additional-option input:checked {
+    background: #ffd900;
+
+    border-color: #ffd900;
+
+    box-shadow:
+        inset 0 0 0 4px #071923;
+}
+
+.additional-option strong {
+    color: #ffd900;
+
+    font-size: 9px;
+}
+
+
+/* ========================================
+   TEXTAREA
+======================================== */
+
+textarea {
+    width: 100%;
+
+    min-height: 90px;
+
+    resize: none;
+
+    padding: 12px;
+
+    outline: none;
+
+    border: 1px solid #29404e;
+
+    border-radius: 10px;
+
+    background: #071923;
+
+    color: white;
+
+    font-size: 10px;
+}
+
+textarea::placeholder {
+    color: #647680;
+}
+
+
+/* ========================================
+   ORDER BAR
+======================================== */
+
+.order-section {
+    position: fixed;
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+    max-width: 480px;
+
+    min-height: 82px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 16px;
+
+    z-index: 50;
+
+    background: rgba(3, 15, 24, 0.97);
+
+    border-top: 1px solid #29404e;
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* ========================================
+   QUANTITY
+======================================== */
+
+.quantity {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    min-width: 90px;
+
+    height: 45px;
+
+    padding: 0 7px;
+
+    border: 1px solid #334b58;
+
+    border-radius: 10px;
+
+    background: #071923;
+}
+
+.quantity button {
+    width: 27px;
+    height: 27px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 18px;
+}
+
+.quantity button:last-child {
+    color: #ffd900;
+}
+
+.quantity span {
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* ========================================
+   ADD TO CART
+======================================== */
+
+.add-cart {
+    flex: 1;
+
+    min-height: 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #ffd900;
+
+    color: #071018;
+
+    font-weight: 700;
+}
+
+.add-cart span {
+    font-size: 11px;
+}
+
+.add-cart strong {
+    margin-top: 1px;
+
+    font-size: 10px;
+}
+

@@ -1,0 +1,441 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    background: #000810;
+
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* ========================================
+   PAGE
+======================================== */
+
+.menu-page {
+    width: 100%;
+    max-width: 480px;
+
+    min-height: 100vh;
+
+    margin: auto;
+
+    padding: 0 18px 90px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #092031,
+            #03111c 45%,
+            #020b13
+        );
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.menu-header {
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.back-button,
+.hamburger {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #071923;
+
+    border: 1px solid #304653;
+
+    color: white;
+
+    font-size: 21px;
+}
+
+.hamburger {
+    cursor: pointer;
+}
+
+.menu-logo {
+    width: 120px;
+}
+
+
+/* ========================================
+   TITLE
+======================================== */
+
+.menu-title {
+    margin-top: 10px;
+
+    margin-bottom: 20px;
+}
+
+.menu-title h1 {
+    font-size: 27px;
+
+    line-height: 1.2;
+
+    margin-bottom: 6px;
+}
+
+.menu-title p {
+    color: #84939d;
+
+    font-size: 11px;
+}
+
+
+/* ========================================
+   CATEGORY FILTER
+======================================== */
+
+.category-filter {
+    flex-direction: column;
+    gap: 10px;
+
+    overflow-x: auto;
+
+    padding-bottom: 6px;
+
+    margin-bottom: 30px;
+
+    scrollbar-width: none;
+}
+
+.category-filter::-webkit-scrollbar {
+    display: none;
+}
+
+.category {
+    flex-shrink: 0;
+
+    padding: 9px 12px;
+
+    border-radius: 9px;
+
+    border: 1px solid #354b58;
+
+    background: #071923;
+
+    color: #c5d0d6;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+.category.active {
+    background: #ffd900;
+
+    border-color: #ffd900;
+
+    color: #071018;
+
+    font-weight: 700;
+}
+
+
+/* ========================================
+   MENU SECTION
+======================================== */
+
+.menu-section {
+    margin-bottom: 30px;
+}
+
+.menu-section-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 14px;
+}
+
+.menu-section-title span {
+    font-size: 18px;
+}
+
+.menu-section-title h2 {
+    font-size: 17px;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* ========================================
+   MENU LIST
+======================================== */
+
+.menu-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+
+/* ========================================
+   MENU CARD
+======================================== */
+
+.menu-card {
+    position: relative;
+
+    display: flex;
+
+    gap: 10px;
+
+    min-height: 105px;
+
+    padding: 7px;
+
+    background: #071a26;
+
+    border: 1px solid #2b4554;
+
+    border-radius: 13px;
+
+    transition: 0.2s;
+}
+
+.menu-card:hover {
+    border-color: #ffd900;
+
+    transform: translateY(-1px);
+}
+
+.menu-card img {
+    width: 91px;
+    height: 91px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border-radius: 9px;
+}
+
+.menu-info {
+    padding: 5px 32px 5px 2px;
+}
+
+.menu-info h3 {
+    font-size: 11px;
+
+    line-height: 1.35;
+
+    margin-bottom: 4px;
+}
+
+.menu-info strong {
+    display: block;
+
+    color: #ffd900;
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+}
+
+.menu-info p {
+    color: #8a9ba5;
+
+    font-size: 8px;
+
+    line-height: 1.45;
+}
+
+
+/* ========================================
+   ADD BUTTON
+======================================== */
+
+.add-menu {
+    position: absolute;
+
+    right: 10px;
+    bottom: 10px;
+
+    width: 27px;
+    height: 27px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ffd900;
+
+    color: #071018;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.add-menu:hover {
+    transform: scale(1.1);
+}
+
+
+/* ========================================
+   SIMPLE MENU
+======================================== */
+
+.simple-menu {
+    display: flex;
+
+    flex-direction: column;
+
+    border: 1px solid #29404e;
+
+    border-radius: 13px;
+
+    overflow: hidden;
+}
+
+.simple-menu div {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 14px;
+
+    background: #071a26;
+
+    border-bottom: 1px solid #243a47;
+
+    color: #d5dde1;
+
+    font-size: 10px;
+}
+
+.simple-menu div:last-child {
+    border-bottom: none;
+}
+
+.simple-menu strong {
+    color: #ffd900;
+
+    font-size: 12px;
+}
+
+
+/* ========================================
+   BOTTOM NAV
+======================================== */
+
+.bottom-nav {
+    position: fixed;
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+    max-width: 480px;
+
+    height: 68px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    align-items: center;
+
+    background: rgba(3, 15, 24, 0.96);
+
+    border-top: 1px solid #29404e;
+
+    backdrop-filter: blur(12px);
+
+    z-index: 50;
+}
+
+.bottom-nav a {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 3px;
+
+    color: #71828d;
+
+    font-size: 18px;
+}
+
+.bottom-nav small {
+    font-size: 8px;
+}
+
+.bottom-nav a.active {
+    color: #ffd900;
+}
+
+
+/* ========================================
+   DESKTOP
+======================================== */
+
+@media (min-width: 700px) {
+
+    body {
+        background: #000810;
+    }
+
+    .menu-page {
+        box-shadow:
+            0 0 80px rgba(0, 0, 0, 0.7);
+    }
+}
