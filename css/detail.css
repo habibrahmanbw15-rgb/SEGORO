@@ -316,7 +316,7 @@ a {
     font-size: 10px;
 }
 
-.select-box span {
+.select-chevron {
     position: absolute;
 
     top: 50%;
@@ -327,6 +327,8 @@ a {
     color: #ffd900;
 
     pointer-events: none;
+
+    font-size: 12px;
 }
 
 
@@ -569,7 +571,7 @@ textarea::placeholder {
 
     color: white;
 
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .quantity button:last-child {

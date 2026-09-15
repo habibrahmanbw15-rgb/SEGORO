@@ -52,35 +52,18 @@ button {
             #020b13 100%
         );
 
-    overflow: hidden;
-
-    padding-bottom: 80px;
+    /* overflow hidden dihapus agar sticky header bekerja */
+    padding-bottom: 40px;
 }
 
 
 /* ========================================
-   HEADER
+   HEADER (original — hidden on new pages
+   yang menggunakan .site-header dari global.css)
 ======================================== */
 
 .header {
-    position: absolute;
-
-    top: 0;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 100%;
-    max-width: 480px;
-
-    z-index: 20;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 18px 20px;
+    display: none; /* diganti oleh .site-header di global.css */
 }
 
 .logo img {
@@ -101,7 +84,7 @@ button {
 
     color: white;
 
-    font-size: 24px;
+    font-size: 16px;
 
     cursor: pointer;
 
@@ -429,8 +412,7 @@ button {
 }
 
 .promo-image {
-    width: 45%;
-
+    width: 20%;
     flex-shrink: 0;
 }
 

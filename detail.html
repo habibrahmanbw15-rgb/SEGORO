@@ -1,364 +1,178 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Ikan Bakar - Segoro Banyuwangi</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
-    <link rel="stylesheet" href="css/detail.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Menu — Segoro Banyuwangi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <link rel="stylesheet" href="css/global.css">
 </head>
-
 <body>
 
-    <main class="detail-page">
+  <!-- ═══ NAV OVERLAY & DRAWER ═══ -->
+  <div id="nav-overlay" aria-hidden="true"></div>
+  <nav id="nav-drawer" aria-label="Navigasi utama">
+    <div class="nav-drawer-header">
+      <img src="assets/logosegro.png" alt="Segoro Banyuwangi" class="nav-drawer-logo">
+      <button id="nav-close" class="nav-drawer-close" aria-label="Tutup menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="nav-drawer-links">
+      <a href="index.html" data-nav-link><i class="fa-solid fa-house"></i> Beranda</a>
+      <a href="favorit.html" data-nav-link><i class="fa-solid fa-utensils"></i> Menu</a>
+      <a href="reservation.html" data-nav-link><i class="fa-solid fa-calendar-days"></i> Reservasi</a>
+      <a href="gallery.html" data-nav-link><i class="fa-solid fa-images"></i> Gallery</a>
+      <a href="location.html" data-nav-link><i class="fa-solid fa-map-pin"></i> Lokasi</a>
+    </div>
+    <a href="cart.html" class="nav-drawer-cart" aria-label="Keranjang">
+      <i class="fa-solid fa-cart-shopping"></i>
+      Keranjang
+      <span class="cart-badge" style="display:none;">0</span>
+    </a>
+  </nav>
 
-        <!-- ================= HEADER ================= -->
+  <!-- ═══ DESKTOP HEADER ═══ -->
+  <header class="desktop-header" style="display:none;">
+    <div class="desktop-header-inner">
+      <div class="desktop-logo">
+        <a href="index.html"><img src="assets/logosegro.png" alt="Segoro Banyuwangi"></a>
+      </div>
+      <nav class="desktop-nav" aria-label="Navigasi desktop">
+        <a href="index.html" data-nav-link>Beranda</a>
+        <a href="favorit.html" data-nav-link>Menu</a>
+        <a href="reservation.html" data-nav-link>Reservasi</a>
+        <a href="gallery.html" data-nav-link>Gallery</a>
+        <a href="location.html" data-nav-link>Lokasi</a>
+      </nav>
+      <div class="desktop-nav-actions">
+        <a href="cart.html" class="desktop-cart-btn cart-badge-wrapper" aria-label="Keranjang">
+          <i class="fa-solid fa-cart-shopping"></i>
+          Keranjang
+          <span class="cart-badge" style="display:none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
 
-        <header class="detail-header">
+  <!-- ═══ MOBILE HEADER ═══ -->
+  <header class="detail-header">
+    <a href="favorit.html" class="back-button" aria-label="Kembali ke menu">
+      <i class="fa-solid fa-arrow-left"></i>
+    </a>
+    <span class="header-title">Detail Menu</span>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <!-- Cart button (mengganti Share) -->
+      <a href="cart.html" class="detail-cart-btn cart-badge-wrapper" aria-label="Keranjang">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge" style="display:none;">0</span>
+      </a>
+      <button class="hamburger-btn" aria-label="Buka menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
 
-            <a href="menu.html" class="back-button">
-                ←
-            </a>
+  <main class="detail-page">
+    <div class="detail-layout">
 
-            <span class="header-title">
-                Detail Menu
-            </span>
-
-            <button class="share-button">
-                ↗
-            </button>
-
-        </header>
-
-
-        <!-- ================= PRODUCT IMAGE ================= -->
-
+      <!-- ═══ LEFT: IMAGE ═══ -->
+      <div class="detail-col-left">
         <section class="product-image">
-
-            <img
-                src="assets/hero-ikan.jpg"
-                alt="Ikan Bakar"
-            >
-
-            <button class="favorite-button">
-                ♡
-            </button>
-
-            <div class="image-counter">
-                1 / 4
-            </div>
-
+          <img src="assets/heroikan.jpe" alt="Produk">
+          <button class="favorite-button" aria-label="Tambah ke favorit">
+            <i class="fa-regular fa-heart"></i>
+          </button>
         </section>
+      </div>
 
+      <!-- ═══ RIGHT: INFO & ORDER ═══ -->
+      <div class="detail-col-right">
 
-        <!-- ================= PRODUCT INFO ================= -->
-
+        <!-- Product info -->
         <section class="product-info">
-
-            <div class="product-heading">
-
-                <div>
-                    <h1>Ikan Bakar</h1>
-
-                    <span class="price">
-                        Rp. 35.000
-                    </span>
-                </div>
-
-                <span class="favorite-label">
-                    ★ Favorit
-                </span>
-
+          <div class="product-heading">
+            <div>
+              <h1>Memuat...</h1>
+              <span class="price">Rp 0</span>
             </div>
-
-
-            <p class="description">
-                Ikan segar pilihan, dibakar dengan
-                bumbu khas Segoro Banyuwangi yang
-                meresap sempurna.
-            </p>
-
+            <span class="favorite-label" style="display:none;">
+              <i class="fa-solid fa-star"></i> Favorit
+            </span>
+          </div>
+          <p class="description">Memuat deskripsi produk...</p>
         </section>
 
+        <!-- Variant -->
+        <section class="option-section" id="variant-section">
+          <div class="option-heading">
+            <div><h2>Pilih Varian</h2><span>Pilih sesuai selera</span></div>
+            <small>Wajib</small>
+          </div>
+          <div class="select-box">
+            <select aria-label="Pilih varian produk">
+              <option value="">Pilih varian...</option>
+            </select>
+            <i class="fa-solid fa-chevron-down select-chevron" aria-hidden="true"></i>
+          </div>
+        </section>
 
-        <!-- ================= PILIHAN IKAN ================= -->
+        <!-- Bumbu -->
+        <section class="option-section" id="bumbu-section">
+          <div class="option-heading">
+            <div><h2>Pilih Bumbu</h2><span>Pilih bumbu bakaran favoritmu</span></div>
+            <small>Wajib</small>
+          </div>
+          <div class="radio-list"></div>
+        </section>
 
+        <!-- Tambahan -->
+        <section class="option-section" id="additions-section">
+          <div class="option-heading">
+            <div><h2>Tambahan</h2><span>Tambahkan pelengkap</span></div>
+            <small>Opsional</small>
+          </div>
+          <div class="additional-list"></div>
+        </section>
+
+        <!-- Catatan -->
         <section class="option-section">
-
-            <div class="option-heading">
-
-                <div>
-                    <h2>Pilih Ikan</h2>
-
-                    <span>
-                        Pilih jenis ikan yang kamu inginkan
-                    </span>
-                </div>
-
-                <small>
-                    Wajib
-                </small>
-
-            </div>
-
-
-            <div class="select-box">
-
-                <select>
-
-                    <option value="">
-                        Pilih Jenis Ikan
-                    </option>
-
-                    <option>
-                        Ikan Kembung
-                    </option>
-
-                    <option>
-                        Ikan Kakap
-                    </option>
-
-                    <option>
-                        Ikan Bandeng
-                    </option>
-
-                    <option>
-                        Ikan Laut Segar
-                    </option>
-
-                </select>
-
-                <span>
-                   ⌄
-                </span>
-
-            </div>
-
+          <div class="option-heading">
+            <div><h2>Catatan</h2><span>Permintaan khusus</span></div>
+            <small>Opsional</small>
+          </div>
+          <textarea placeholder="Contoh: Jangan terlalu pedas..." aria-label="Catatan pesanan"></textarea>
         </section>
 
-
-        <!-- ================= PILIHAN BUMBU ================= -->
-
-        <section class="option-section">
-
-            <div class="option-heading">
-
-                <div>
-                    <h2>Pilih Bumbu</h2>
-
-                    <span>
-                        Pilih bumbu bakaran favoritmu
-                    </span>
-                </div>
-
-                <small>
-                    Wajib
-                </small>
-
-            </div>
-
-
-            <div class="radio-list">
-
-                <label class="radio-option">
-
-                    <input
-                        type="radio"
-                        name="bumbu"
-                        checked
-                    >
-
-                    <span class="custom-radio"></span>
-
-                    <span>
-                        Bumbu Merah
-                    </span>
-
-                </label>
-
-
-                <label class="radio-option">
-
-                    <input
-                        type="radio"
-                        name="bumbu"
-                    >
-
-                    <span class="custom-radio"></span>
-
-                    <span>
-                        Bumbu Kuning
-                    </span>
-
-                </label>
-
-
-                <label class="radio-option">
-
-                    <input
-                        type="radio"
-                        name="bumbu"
-                    >
-
-                    <span class="custom-radio"></span>
-
-                    <span>
-                        Bumbu Kecap
-                    </span>
-
-                </label>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= TAMBAHAN ================= -->
-
-        <section class="option-section">
-
-            <div class="option-heading">
-
-                <div>
-                    <h2>Tambahan</h2>
-
-                    <span>
-                        Tambahkan pelengkap
-                    </span>
-                </div>
-
-                <small>
-                    Opsional
-                </small>
-
-            </div>
-
-
-            <div class="additional-list">
-
-                <label class="additional-option">
-
-                    <div class="option-left">
-
-                        <input type="checkbox">
-
-                        <span>
-                            Nasi Putih
-                        </span>
-
-                    </div>
-
-                    <strong>
-                        + Rp. 5.000
-                    </strong>
-
-                </label>
-
-
-                <label class="additional-option">
-
-                    <div class="option-left">
-
-                        <input type="checkbox">
-
-                        <span>
-                            Pete
-                        </span>
-
-                    </div>
-
-                    <strong>
-                        + Rp. 6.000
-                    </strong>
-
-                </label>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= CATATAN ================= -->
-
-        <section class="option-section">
-
-            <div class="option-heading">
-
-                <div>
-                    <h2>Catatan</h2>
-
-                    <span>
-                        Permintaan khusus
-                    </span>
-                </div>
-
-                <small>
-                    Opsional
-                </small>
-
-            </div>
-
-
-            <textarea
-                placeholder="Contoh: Jangan terlalu pedas..."
-            ></textarea>
-
-        </section>
-
-
-        <!-- ================= ORDER ================= -->
-
+        <!-- Order bar — tambah ke cart + WA -->
         <section class="order-section">
-
-            <div class="quantity">
-
-                <button>
-                    −
-                </button>
-
-                <span>
-                    1
-                </span>
-
-                <button>
-                    +
-                </button>
-
-            </div>
-
-
-            <button class="add-cart">
-
-                <span>
-                    Tambah ke Keranjang
-                </span>
-
-                <strong>
-                    Rp. 35.000
-                </strong>
-
+          <div class="quantity" role="group" aria-label="Jumlah pesanan">
+            <button aria-label="Kurangi jumlah"><i class="fa-solid fa-minus"></i></button>
+            <span>1</span>
+            <button aria-label="Tambah jumlah"><i class="fa-solid fa-plus"></i></button>
+          </div>
+          <div style="display:flex;flex-direction:column;flex:1;gap:6px;">
+            <button class="add-cart" aria-label="Tambah ke keranjang">
+              <span>Tambah ke Keranjang</span>
+              <strong>Rp 0</strong>
             </button>
-
+            <button class="btn-whatsapp-slim" id="detail-wa-btn" aria-label="Pesan via WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i> Pesan via WhatsApp
+            </button>
+          </div>
         </section>
 
+      </div><!-- /.detail-col-right -->
+    </div><!-- /.detail-layout -->
+  </main>
 
-    </main>
-
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/detail.js"></script>
 </body>
 </html>
-```
